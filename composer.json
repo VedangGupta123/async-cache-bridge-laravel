@@ -3,6 +3,12 @@
     "description": "Laravel bridge for Fyennyi AsyncCache.",
     "type": "library",
     "license": "LicenseRef-CSSM-Unlimited-2.0",
+    "authors": [
+        {
+            "name": "Serhii Cherneha",
+            "email": "chernegasergiy3@gmail.com"
+        }
+    ],
     "require": {
         "php": "^8.1",
         "fyennyi/async-cache-php": "dev-main",
