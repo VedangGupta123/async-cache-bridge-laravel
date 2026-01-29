@@ -1,6 +1,6 @@
 <?php
 
-namespace Fyennyi\AsyncCache\Bridge\Laravel\Tests;
+namespace Tests;
 
 use Fyennyi\AsyncCache\Bridge\Laravel\AsyncCacheServiceProvider;
 use Orchestra\Testbench\TestCase as OrchestraTestCase;
