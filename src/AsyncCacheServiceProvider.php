@@ -25,7 +25,6 @@
 
 namespace Fyennyi\AsyncCache\Bridge\Laravel;
 
-use Fyennyi\AsyncCache\AsyncCacheBuilder;
 use Fyennyi\AsyncCache\AsyncCacheManager;
 use Illuminate\Support\ServiceProvider;
 
@@ -47,9 +46,11 @@ class AsyncCacheServiceProvider extends ServiceProvider
             $adapterService = $config['adapter'] ?? 'cache.store';
             $cacheAdapter = $app->make($adapterService);
 
-            return AsyncCacheBuilder::create($cacheAdapter)
-                ->withLogger($app['log']) // Laravel Log Manager
-                ->build();
+            return new AsyncCacheManager(
+                AsyncCacheManager::configure($cacheAdapter)
+                    ->withLogger($app['log']) // Laravel Log Manager
+                    ->build()
+            );
         });
 
         $this->app->alias(AsyncCacheManager::class, 'async-cache');
